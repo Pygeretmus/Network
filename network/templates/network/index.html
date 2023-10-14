@@ -1,0 +1,25 @@
+{% extends "network/layout.html" %}
+{% load static %}
+{% load templatetag %}
+
+{% block body %}
+    <div id="loading-screen">
+        <div id="loading-spinner"></div>
+    </div>
+    <div id="person" style="display: none">
+    </div>
+    <div class="paginator">
+    </div>
+    <div id="all_posts"> 
+    </div>
+    <div class="paginator"> 
+    </div>
+{% endblock %}
+
+{% block script %}
+{% if user.is_authenticated %}
+    <script src="{% static 'network/not_project4.js' %}"></script>
+{% else %}
+    <script src="{% static 'network/project4.js' %}"></script>
+{% endif %}
+{% endblock %}
